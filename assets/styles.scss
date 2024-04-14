@@ -1,0 +1,57 @@
+---
+---
+
+/* https://stackoverflow.com/a/67353840 */
+@mixin dark() {
+  @media (prefers-color-scheme: dark) {
+    @content;
+  }
+}
+
+// Include syntax highlighting
+@import url(chalk-dark.css);
+
+.nav-item .fa {
+	margin-right: 2px;
+}
+
+pre.highlight {
+	padding: 12px;
+	border-radius: 12px;
+}
+
+.task-list {
+	list-style-type: none;
+	padding: 0;
+
+	&-item-checkbox {
+		margin-right: 6px;
+	}
+}
+
+nav {
+	background: #1A1A1A;
+}
+
+footer {
+	background: #EAEAEA;
+	@include dark() { background: #1A1A1A; }
+
+	img {
+		filter: invert(1);
+		@include dark() { filter: none; }
+	}
+}
+
+.card-columns.index {
+  @media (min-width: 576px) {
+    column-count: 2;
+  }
+  @media (min-width: 992px) {
+    column-count: 3;
+  }
+}
+
+/* Pull in the device */
+@import url(device.css);
+

@@ -1,0 +1,46 @@
+---
+---
+.device {
+	/* Defaults for small screens (phone) */
+	img {
+		width: 100%;
+		padding: 0px;
+	}
+
+	/* Draw a tablet on larger screens (tablet) */
+	@media (min-width: 600px) {
+		img {
+			border-radius: 10px;
+			padding: 15px;
+			border: 1px solid #C0C0C0;
+			background: black;
+		}
+	}
+
+	/* Draw a laptop on largest screens (laptop & up) */
+	@media (min-width: 992px) {
+		img {
+			width: 75%;
+			padding: 15px 10px 10px 10px;
+		}
+		.keyboard {
+			border-radius: 10px 10px 50px 50px;
+			border-top: 2px solid #C0C0C0;
+			background: #909090;
+			height: 20px;
+			width: 85%;
+			margin: auto;
+		}
+		.keyboard:after {
+			content: '';
+			display: block;
+			background: #C0C0C0;
+			border-radius: 10px 10px 80px 80px;
+			height: 3px;
+			width: 150px;
+			margin: auto;
+			z-index: 1;
+		}
+	}
+
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+  <body class="d-flex flex-column" style="min-height: 100vh;">
+    {%- include header.html -%}
+
+    <noscript>
+      <div class="container">
+        <div class="alert alert-warning" role="alert">
+          This site may not function entirely correctly with JavaScript disabled.
+        </div>
+      </div>
+    </noscript>
+
+    {% if page.flex-from-header %}
+    <div class="flex-fill"></div>
+    {% endif %}
+
+    {{ content }}
+
+    {% if page.flex-to-footer %}
+    <div class="flex-fill"></div>
+    {% endif %}
+
+    {%- include footer.html -%}
+  </body>
+
+  {%- include loadjs.html -%}
+</html>

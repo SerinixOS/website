@@ -1,0 +1,50 @@
+title: carbonOS
+url: "https://carbon.sh"
+current_version: "2022.3"
+
+# Links to external services
+external_urls:
+  git: "https://gitlab.com/carbonOS"
+  #forum: "https://discourse.carbon.sh"
+  forum: "https://reddit.com/r/carbonOS"
+  telemetry: "https://telemetry.carbon.sh"
+  infrastructure: "/infrastructure"
+
+collections:
+  posts:
+    permalink: /blog/:name.html
+  support_pages:
+    collections_dir: support
+    output: true
+    permalink: /support/:name.html
+    order:
+    - installation.md
+    - installation-custom.md
+    - infrastructure.md
+
+# Default front matter for pages
+defaults:
+- scope:
+    path: "" # Include everything
+  values:
+    layout: "default"
+    flex-from-header: false
+    flex-to-footer: true
+- scope:
+    type: posts
+  values:
+    layout: "post"
+- scope:
+    type: support_pages
+  values:
+    category_title: "carbonOS: Support"
+    layout: support
+
+# Enable the atom feed generation
+plugins:
+- jekyll-feed
+
+exclude:
+- .gitlab-ci.yml
+- README.md
+- LICENSE

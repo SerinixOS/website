@@ -1,0 +1,37 @@
+<nav class="navbar sticky-top navbar-expand-sm navbar-dark mb-3">
+  <a class="navbar-brand" href="/">
+    <img src="/assets/logo.svg" width=40 height=40 />
+  </a>
+  <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle Navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="navbar-collapse collapse" id="navbarContent">
+    <div class="navbar-nav mx-auto">
+      <a id="nav-home" class="nav-item nav-link text-center px-3 {% if page.url=='/' %}active{% endif %}" href="/">
+        <i class="fa fa-home" aria-hidden="true"></i>
+        Home
+      </a>
+      <a id="nav-support" class="nav-item nav-link text-center px-3 {% if page.url contains '/blog' %}active{% endif %}" href="/blog">
+        <i class="fa fa-rss" aria-hidden="true"></i>
+        Blog
+      </a>
+      <a class="nav-item nav-link text-center px-3" href="{{ site.external_urls.git }}" target="_blank">
+        <i class="fa fa-code-fork" aria-hidden="true"></i>
+        Source&nbsp;<i class="fa fa-external-link small d-inline" aria-hidden="true"></i>
+      </a>
+      <a class="nav-item nav-link text-center px-3" href="{{ site.external_urls.forum }}" target="_blank">
+        <i class="fa fa-users" aria-hidden="true"></i>
+        Forum&nbsp;<i class="fa fa-external-link small d-inline" aria-hidden="true"></i>
+      </a>
+      <a id="nav-support" class="nav-item nav-link text-center px-3  {% if page.url contains '/support' %}active{% endif %}" href="/support">
+        <i class="fa fa-life-ring" aria-hidden="true"></i>
+        Support
+      </a>
+    </div>
+
+    <a class="btn btn-primary d-block mw-100" role="button" href="/download">
+      <i class="fa fa-download" aria-hidden="true"></i>
+      Download
+    </a>
+  </div>
+</nav>

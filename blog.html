@@ -1,0 +1,23 @@
+---
+title: "carbonOS: Blog"
+permalink: /blog/index.html
+---
+
+<div class="container">
+  <div class="text-center mb-4">
+    <h1>Blog</h1>
+    <h4>Important updates from the carbonOS team</h4>
+  </div>
+
+  <div class="list-group">
+    {%- for post in site.posts -%}
+    <a class="list-group-item list-group-item-action" href="{{ post.url | relative_url }}">
+      <div class="d-flex justify-content-between align-items-center">
+        <h3>{{ post.title | escape }}</h3>
+        <small class="text-muted small">{{ post.date | date: "%b %-d, %Y" }}</small>
+      </div>
+      {{ post.excerpt }}
+    </a>
+    {%- endfor -%}
+  </div>
+</div>

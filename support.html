@@ -1,0 +1,32 @@
+---
+title: "SerinixOS: Support"
+permalink: /support/index.html
+---
+
+<div class="container">
+  <div class="text-center mb-4">
+    <h1>Support</h1>
+    <h4>Guides & tutorials for SerinixOS</h4>
+  </div>
+
+  <div class="list-group">
+    {%- for page in site.support_pages -%}
+
+      <a class="list-group-item list-group-item-action" href="{{ page.url }}">
+        <div class="d-flex justify-content-between align-items-center">
+          <h3>{{ page.title | escape }}</h3>
+          {%- if page.os_version == site.current_version -%}
+            {%- assign color = "badge-success" -%}
+            {%- assign title = "Up to date" -%}
+          {%- else -%}
+            {%- assign color = "badge-secondary" -%}
+            {%- assign title = "Potentially out of date" -%}
+          {%- endif -%}
+          <span class="badge {{ color }} badge-pill" title="{{title}}">{{ page.os_version | escape }}</span>
+        </div>
+        <p class="card-text">{{ page.description }}</p>
+      </a>
+    {%- endfor -%}
+  </div>
+</div>
+

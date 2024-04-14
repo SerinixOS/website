@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<div class="container">
+  {%- assign os_version = page.os_version | default: site.current_version -%}
+  {%- if os_version == site.current_version -%}
+    {%- assign color = "badge-success" -%}
+    <div class="alert alert-info" role="alert">
+      <strong>carbonOS {{ os_version }} is pre-release software!</strong>
+      Bad things will happen if you use it in a production environment.
+      You've been warned
+    </div>
+  {%- else -%}
+    {%- assign color = "badge-secondary" -%}
+    <div class="alert alert-warning" role="alert">
+      <h4 class="alert-heading">Potentially out-of-date!</h4>
+      This support article was written an older version of carbonOS, so the
+      information it contains might no longer apply to the latest version.
+      Continue at your own risk!
+    </div>
+  {%- endif -%}
+
+  <div class="text-center mb-2">
+    <h2>{{ page.title }}</h2>
+    Updated for <span class="badge {{ color }} badge-pill">{{ os_version }}</span>
+  </div>
+
+  {{ content }}
+</div>
